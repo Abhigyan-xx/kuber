@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shri Kuber Travel Agency | Varanasi Tours, Cars, Scooters &amp; Services</title>
+  <meta name="description" content="Shri Kuber Travel Agency, Varanasi – tour packages, car and scooter rental, boat rides, railway station pick-up, pre-wedding shoots and hotel booking. Book on WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/tw-config.js"></script>
+  <script src="assets/app.js" defer></script>
+  <style>
+    html { scroll-behavior: auto; }
+    .page-in { animation: pageIn .3s ease both; }
+    @keyframes pageIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body class="bg-cream text-ink font-sans antialiased">
+  <!-- Header and footer load ONCE. Only <main> changes when you click a menu item. -->
+  <div id="site-header"></div>
+  <main id="app" class="min-h-[70vh]"></main>
+  <div id="site-footer"></div>
+
+  <!-- Page content (shown inside <main> by the router in assets/app.js) -->
+  <template id="tpl-home"><!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-sage-100 via-cream to-saffron-100"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-block bg-white/80 text-sage-700 text-xs font-semibold px-4 py-1.5 rounded-full border border-sand">🙏 Namaste · Welcome to Kashi</span>
+        <h1 class="font-display text-4xl md:text-6xl text-sage-900 mt-5 leading-tight">Explore Varanasi the <span class="text-saffron-600">easy &amp; beautiful</span> way</h1>
+        <p class="mt-5 text-ink/70 max-w-md">Tour packages, cars, scooters, boat rides and more. Clear fixed prices, and booking is just one WhatsApp message away.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#/packages" class="bg-sage-600 hover:bg-sage-700 text-white font-semibold px-6 py-3 rounded-full shadow-soft transition">View Packages</a>
+          <a data-wa="Namaste Shri Kuber Travel Agency! I want to plan a trip to Varanasi. Please help me." class="bg-[#25D366] hover:brightness-95 text-white font-semibold px-6 py-3 rounded-full shadow-soft transition cursor-pointer">Book on WhatsApp</a>
+        </div>
+      </div>
+      <div class="relative h-72 md:h-96 rounded-[2rem] overflow-hidden shadow-soft bg-gradient-to-br from-sage-200 to-saffron-100 grid place-items-center text-8xl">
+        <img src="assets/varanasi-ghats.jpg" alt="Varanasi ghats along the Ganga" class="absolute inset-0 w-full h-full object-cover">
+        <img src="assets/img/hero.jpg" alt="Varanasi ghats along the Ganga" onerror="imgFallback(this)" class="absolute inset-0 w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick categories -->
+  <section class="max-w-6xl mx-auto px-4 -mt-6 relative">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+      <a href="#/packages" class="bg-white rounded-2xl border border-sand shadow-soft p-4 text-center hover:-translate-y-1 transition"><div class="text-3xl"><img src="assets/icons/packages.svg" alt="Packages" class="w-full h-full object-cover"></div><p class="mt-1 text-sm font-semibold text-sage-900">Packages</p></a>
+      <a href="#/rent-car" class="bg-white rounded-2xl border border-sand shadow-soft p-4 text-center hover:-translate-y-1 transition"><div class="text-3xl"><img src="assets/icons/rent-car.svg" alt="Rent Car" class="w-full h-full object-cover"></div><p class="mt-1 text-sm font-semibold text-sage-900">Rent Car</p></a>
+      <a href="#/rent-scooter" class="bg-white rounded-2xl border border-sand shadow-soft p-4 text-center hover:-translate-y-1 transition"><div class="text-3xl"><img src="assets/icons/rent-scooter.svg" alt="Rent Scooter" class="w-full h-full object-cover"></div><p class="mt-1 text-sm font-semibold text-sage-900">Rent Scooter</p></a>
+      <a href="#/services" class="bg-white rounded-2xl border border-sand shadow-soft p-4 text-center hover:-translate-y-1 transition"><div class="text-3xl"><img src="assets/icons/services.svg" alt="Services" class="w-full h-full object-cover"></div><p class="mt-1 text-sm font-semibold text-sage-900">Boat &amp; Services</p></a>
+      <a href="#/contact" class="bg-white rounded-2xl border border-sand shadow-soft p-4 text-center hover:-translate-y-1 transition col-span-2 md:col-span-1"><div class="text-3xl"><img src="assets/icons/contact.svg" alt="Contact" class="w-full h-full object-cover"></div><p class="mt-1 text-sm font-semibold text-sage-900">Contact</p></a>
+    </div>
+  </section>
+
+  <!-- Featured packages -->
+  <section class="max-w-6xl mx-auto px-4 mt-16">
+    <div class="flex items-end justify-between mb-6">
+      <div><p class="text-sm font-semibold text-saffron-600">Popular picks</p><h2 class="font-display text-3xl text-sage-900">Featured Packages</h2></div>
+      <a href="#/packages" class="text-sm font-semibold text-sage-600 hover:underline">See all →</a>
+    </div>
+    <div data-list="packages" data-limit="3" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- Services -->
+  <section class="max-w-6xl mx-auto px-4 mt-16">
+    <div class="flex items-end justify-between mb-6">
+      <div><p class="text-sm font-semibold text-saffron-600">Everything in one place</p><h2 class="font-display text-3xl text-sage-900">Our Services</h2></div>
+      <a href="#/services" class="text-sm font-semibold text-sage-600 hover:underline">See all →</a>
+    </div>
+    <div data-list="services" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+  </section>
+
+  <!-- Why us -->
+  <section class="max-w-6xl mx-auto px-4 mt-16">
+    <div class="bg-sage-50 border border-sage-100 rounded-[2rem] p-8 md:p-12">
+      <h2 class="font-display text-3xl text-sage-900 text-center">Why travel with Shri Kuber?</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 text-center">
+        <div><div class="text-4xl">💰</div><h3 class="font-semibold mt-2 text-sage-900">Fixed Prices</h3><p class="text-sm text-ink/70 mt-1">The rate you see is the rate you pay.</p></div>
+        <div><div class="text-4xl">💬</div><h3 class="font-semibold mt-2 text-sage-900">Book on WhatsApp</h3><p class="text-sm text-ink/70 mt-1">No forms, no waiting. Just chat.</p></div>
+        <div><div class="text-4xl">📍</div><h3 class="font-semibold mt-2 text-sage-900">Local Experts</h3><p class="text-sm text-ink/70 mt-1">Based in Varanasi and familiar with every ghat and lane.</p></div>
+        <div><div class="text-4xl">🛡️</div><h3 class="font-semibold mt-2 text-sage-900">Safe &amp; Verified</h3><p class="text-sm text-ink/70 mt-1">Verified drivers, vehicles and hotels.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-6xl mx-auto px-4 mt-16">
+    <div class="bg-gradient-to-r from-sage-600 to-sage-700 rounded-[2rem] p-8 md:p-12 text-center text-white">
+      <h2 class="font-display text-3xl">Ready for your Varanasi trip?</h2>
+      <p class="mt-2 text-sage-100">Tell us your dates and we will reply with the best plan.</p>
+      <a data-wa="Namaste Shri Kuber Travel Agency! I want to plan a trip to Varanasi. Please help me." class="inline-block mt-6 bg-saffron-400 hover:bg-saffron-500 text-ink font-semibold px-8 py-3 rounded-full transition cursor-pointer">Chat with us now</a>
+    </div>
+  </section>
+</template>
+<template id="tpl-packages"><section class="bg-gradient-to-br from-sage-100 to-saffron-100">
+    <div class="max-w-6xl mx-auto px-4 py-14 text-center">
+      <h1 class="font-display text-4xl md:text-5xl text-sage-900">Our Packages</h1>
+      <p class="mt-3 text-ink/70 max-w-xl mx-auto">Handpicked spiritual, family and couple trips from Varanasi. Tap <b>Book Now</b> and we will continue on WhatsApp.</p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 mt-12">
+    <div data-list="packages" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <p class="mt-8 text-center text-sm text-ink/60">Want something custom? <a data-wa="Namaste! I want a customized tour package. Please share options." class="text-sage-600 font-semibold underline cursor-pointer">Ask us on WhatsApp</a></p>
+  </section>
+</template>
+<template id="tpl-rent-car"><section class="bg-gradient-to-br from-sage-100 to-sand">
+    <div class="max-w-6xl mx-auto px-4 py-14 text-center">
+      <h1 class="font-display text-4xl md:text-5xl text-sage-900">Rent a Car</h1>
+      <p class="mt-3 text-ink/70 max-w-xl mx-auto">Clean AC cars with experienced drivers for city tours, outstation trips and airport transfers.</p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 mt-12">
+    <div data-list="cars" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <div class="mt-10 bg-white border border-sand rounded-3xl p-6 text-sm text-ink/70 grid gap-2 md:grid-cols-3">
+      <p>🛣️ Rates are for 8 hours / 80 km. Extra km is charged as shown.</p>
+      <p>🧾 Toll, parking and state tax are extra, if applicable.</p>
+      <p>🌙 Night halt allowance applies on outstation trips.</p>
+    </div>
+  </section>
+</template>
+<template id="tpl-rent-scooter"><section class="bg-gradient-to-br from-sand to-saffron-100">
+    <div class="max-w-6xl mx-auto px-4 py-14 text-center">
+      <h1 class="font-display text-4xl md:text-5xl text-sage-900">Rent a Scooter</h1>
+      <p class="mt-3 text-ink/70 max-w-xl mx-auto">The best way to explore the narrow lanes of Kashi at your own pace. Helmet included with every rental.</p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 mt-12">
+    <div data-list="scooters" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <div class="mt-10 bg-white border border-sand rounded-3xl p-6 text-sm text-ink/70 grid gap-2 md:grid-cols-3">
+      <p>🪪 Valid driving licence and a government ID are required.</p>
+      <p>⛽ Fuel is not included in the rental rate.</p>
+      <p>🔒 A refundable security deposit may apply at pick-up.</p>
+    </div>
+  </section>
+</template>
+<template id="tpl-services"><section class="bg-gradient-to-br from-sage-200 to-cream">
+    <div class="max-w-6xl mx-auto px-4 py-14 text-center">
+      <h1 class="font-display text-4xl md:text-5xl text-sage-900">Our Services</h1>
+      <p class="mt-3 text-ink/70 max-w-xl mx-auto">Boat rides, railway station pick-up and drop, pre-wedding shoots and hotels, all handled by one trusted local team.</p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 mt-12">
+    <div data-list="services" class="grid sm:grid-cols-2 gap-6"></div>
+    <p class="mt-8 text-center text-sm text-ink/60">Need a combo (hotel + car + boat)? <a data-wa="Namaste! I want a combo of hotel, car and boat ride. Please share the best price." class="text-sage-600 font-semibold underline cursor-pointer">Message us on WhatsApp</a></p>
+  </section>
+</template>
+<template id="tpl-contact"><section class="bg-gradient-to-br from-sage-100 to-saffron-100">
+    <div class="max-w-6xl mx-auto px-4 py-14 text-center">
+      <h1 class="font-display text-4xl md:text-5xl text-sage-900">Contact Us</h1>
+      <p class="mt-3 text-ink/70 max-w-xl mx-auto">Have a question or a plan? Send us a message, we usually reply within minutes.</p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 mt-12 grid lg:grid-cols-2 gap-8">
+    <!-- Form -->
+    <div class="bg-white rounded-3xl border border-sand shadow-soft p-6 md:p-8">
+      <h2 class="font-display text-2xl text-sage-900">Send us a WhatsApp message</h2>
+      <p class="text-sm text-ink/60 mt-1">Fill in the details and we will open WhatsApp with your message ready.</p>
+      <form id="contact-form" class="mt-6 space-y-4">
+        <input id="cf-name" required placeholder="Your name" class="w-full rounded-xl border border-sand bg-cream/50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-200">
+        <select id="cf-topic" required class="w-full rounded-xl border border-sand bg-cream/50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-200">
+          <option value="">I am interested in…</option>
+          <option>Tour Package</option>
+          <option>Rent a Car</option>
+          <option>Rent a Scooter</option>
+          <option>Boat Ride</option>
+          <option>Railway Station Pick-up / Drop</option>
+          <option>Pre-Wedding Shoot</option>
+          <option>Hotel Booking</option>
+          <option>Something else</option>
+        </select>
+        <input id="cf-date" type="date" class="w-full rounded-xl border border-sand bg-cream/50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-200">
+        <textarea id="cf-msg" rows="4" placeholder="Tell us a little about your plan" class="w-full rounded-xl border border-sand bg-cream/50 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-200"></textarea>
+        <button class="w-full bg-[#25D366] hover:brightness-95 text-white font-semibold py-3 rounded-full">Send on WhatsApp</button>
+      </form>
+    </div>
+
+    <!-- Info + map -->
+    <div class="space-y-6">
+      <div class="bg-white rounded-3xl border border-sand shadow-soft p-6 md:p-8 space-y-4 text-sm">
+        <div class="flex gap-4"><span class="text-2xl">📍</span><div><p class="font-semibold text-sage-900">Office</p><p class="text-ink/70" id="c-address"></p></div></div>
+        <div class="flex gap-4"><span class="text-2xl">📞</span><div><p class="font-semibold text-sage-900">Phone / WhatsApp</p><p class="text-ink/70" id="c-phone"></p></div></div>
+        <div class="flex gap-4"><span class="text-2xl">✉️</span><div><p class="font-semibold text-sage-900">Email</p><p class="text-ink/70" id="c-email"></p></div></div>
+        <div class="flex gap-4"><span class="text-2xl">🕖</span><div><p class="font-semibold text-sage-900">Hours</p><p class="text-ink/70" id="c-hours"></p></div></div>
+      </div>
+      <div class="rounded-3xl overflow-hidden border border-sand shadow-soft h-64">
+        <iframe title="Varanasi map" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Varanasi,Uttar+Pradesh&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</template>
+</body>
+</html>
